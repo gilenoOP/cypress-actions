@@ -1,0 +1,21 @@
+name: Cypress Tests Regression
+
+on:
+  workflow_dispatch:
+    inputs:
+      cli:
+        description: Run by Cypress command line
+        default: yarn cypress run
+
+  jobs:
+    cypress-electron-tests:
+      runs on: Ubutun-latest
+      steps:
+        - name: Get code
+          uses: actions/checkout@v4.1.1
+
+        - name: Install dependences
+          run: yarn install
+
+        - name: Run E2E tests
+          run: ${{ github.event_inputs.cli }}

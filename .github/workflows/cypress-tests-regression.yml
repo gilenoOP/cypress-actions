@@ -9,7 +9,7 @@ on:
 
   jobs:
     cypress-electron-tests:
-      runs on: Ubutun-latest
+      runs on: ubutun-latest
       steps:
         - name: Get code
           uses: actions/checkout@v4.1.1

@@ -66,6 +66,7 @@ jobs:
           CYPRESS_RECORD_KEY: 65e3ce2f-5dc3-4a69-acc3-5ecd08cdf4ec
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
   cypress-e2e-edge:
+    needs: cypress-e2e-firefox
     runs-on: ubuntu-latest
     container:
       image: cypress/browsers:node-20.14.0-chrome-126.0.6478.114-1-ff-127.0.1-edge-126.0.2592.61-1

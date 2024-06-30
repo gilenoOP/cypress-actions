@@ -2,7 +2,7 @@ name: Cypress Cloud
 on:
   workflow_dispatch:
     inputs:
-      specs:
+      spec:
         description: Run by cypress command line
         default: cypress/e2e/*
 
@@ -20,7 +20,7 @@ jobs:
           browser: electron
           record: true
           group: UI Electron
-          specs: ${{ github.event.inputs.specs }}
+          spec: ${{ github.event.inputs.spec }}
         env:
           CYPRESS_RECORD_KEY: 65e3ce2f-5dc3-4a69-acc3-5ecd08cdf4ec
           GITHUB_TOKEN: $ {{ secrets.GITHUB_TOKEN }}

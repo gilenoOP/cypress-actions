@@ -6,7 +6,7 @@ cypress.run({
 })
 .then((results) => {
   const args = {
-    target: process.env.TAGERT_TOKEN_EDGE,
+    target: process.env.TARGET_TOKEN_EDGE,
   }
   tesults.results(results, args);
 })

@@ -19,7 +19,7 @@ jobs:
       - name: Run E2E tests
         run: node runner-electron.js
     env:
-      TARGET_TOKEN_ELECTRON: ${{ secrets.TARGET.TOKEN_ELECTRON }}
+      TARGET_TOKEN_ELECTRON: ${{ secrets.TARGET_TOKEN_ELECTRON }}
 
   cypress-chrome-tests:
     needs: cypress-electron-tests
@@ -37,7 +37,7 @@ jobs:
       - name: Run E2E tests
         run: node runner-chrome.js
     env:
-      TARGET_TOKEN_CHROME: ${{ secrets.TARGET.TOKEN_CHROME }}
+      TARGET_TOKEN_CHROME: ${{ secrets.TARGET_TOKEN_CHROME }}
 
   cypress-firefox-tests:
     needs: cypress-chrome-tests
@@ -55,7 +55,7 @@ jobs:
       - name: Run E2E tests
         run: node runner-firefox.js
     env:
-      TARGET_TOKEN_FIREFOX: ${{ secrets.TARGET.TOKEN_FIREFOX }}
+      TARGET_TOKEN_FIREFOX: ${{ secrets.TARGET_TOKEN_FIREFOX }}
 
   cypress-edge-tests:
     needs: cypress-firefox-tests
@@ -73,4 +73,4 @@ jobs:
       - name: Run E2E tests
         run: node runner-edge.js
     env:
-      TARGET_TOKEN_EDGE: ${{ secrets.TARGET.TOKEN_EDGE }}
+      TARGET_TOKEN_EDGE: ${{ secrets.TARGET_TOKEN_EDGE }}
